@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <style>
+        
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .form-section {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-section h2 {
+            margin-bottom: 20px;
+            color: #0047AB;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: none;
+        }
+
+        .file-input {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            color: #aaa;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .budget-type {
+            display: flex;
+            gap: 10px;
+        }
+
+        .budget-type button {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .budget-type button.active {
+            background: #00ab11;
+            color: white;
+            border-color: #0047AB;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .form-actions button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .form-actions .submit {
+            background-color: #05da1a;
+            color: #003F6B;
+            font-weight: 700;
+        }
+
+        .form-actions .submit:hover {
+            background-color: #00D279;
+        }
+
+        .form-actions .cancel {
+            background-color: #CB4500;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .form-actions .cancel:hover {
+            background-color: #8d2f00;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="top-head">
+            <div class="logo">
+                <h1>MAI</h1>
+                <p>We Build Homes</p>
+            </div>
+            <div class="project-buttons">
+                <a href="/pages/post-project.html">Post a Project</a>
+                <button><i class="fa-solid fa-cart-shopping"></i> &nbsp; Login</button>
+                <button>Sign Up</button>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="cname">WWW.MYPROJECT.AI</div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <nav class="navbar-menu">
+                <ul style="list-style: none;">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="#">How it Works</a></li>
+                    <li><a href="/pages/project.html">Project</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">DIY Worktops</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-section">
+            <img src="/assets/images/Rectangle 3391.png" alt="Family Image">
+        </div>
+        <div class="form-section">
+            <div class="notes">
+                <h3>Note</h3>
+                <ul>
+                    <li><p>Precision is key! Customers who provide clear descriptions get optimal proposals for easy project completion.</p></li>
+                    <li><p>To make it better, we suggest you upload relevant (pictures, documents, specifications, etc) for clarity.</p></li>
+                </ul>
+            </div>
+            <div class="post-head">
+                <h2>Post a Project</h2>
+            </div>
+            <div class="form-group">
+                <label for="category" class="category">Category <span class="red">*</span> </label>
+                <select id="category">
+                    <option value="">Select Options</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sub-category" class="sub-cat">Sub-Category<span class="red">*</span></label>
+                <select id="sub-category">
+                    <option value="">Select Options</option>
+                    <option value="1">Option A</option>
+                    <option value="2">Option B</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="title">Project Title <span class="red">*</span></label>
+                <input type="text" id="title" placeholder="Type your project title">
+            </div>
+            <div class="form-group">
+                <label for="description">Project Description<span class="red">*</span></label>
+                <textarea id="description" rows="5" placeholder="Type here..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>UPLOAD SAMPLE HELPFUL</label>
+                <div class="file-input">Drag here or <a href="#">Browse</a> <br><p>Format: JPEG PNG, PDF</p></div>
+            </div>
+            <div class="form-group">
+                <label>Budget Type<span class="red">*</span></label>
+                <div class="budget-type">
+                    <button id="fixed" onclick="selectBudgetType('fixed')">Fixed</button>
+                    <button id="range" onclick="selectBudgetType('range')">Range</button>
+                    <button id="no-idea" onclick="selectBudgetType('no-idea')">No Idea</button>
+                </div>
+                <input type="text" id="flexible" placeholder="flexible" readonly>
+            </div>
+            <div class="form-group">
+                <label for="location">Project Location<span class="red">*</span></label>
+                <input type="text" id="location" placeholder="Search for your location">
+            </div>
+
+            <label for="postcode" >Post Code<span class="red">*</span></label>
+            <div class="form-group code">
+                <input type="text" id="postcode" maxlength="1">
+                <input type="text" id="postcode" maxlength="1">
+                <input type="text" id="postcode" maxlength="1">
+                <input type="text" id="postcode" maxlength="1">
+                <input type="text" id="postcode" maxlength="1">
+                <input type="text" id="postcode" maxlength="1">
+            </div>
+            <div class="form-group">
+                <label>Project Duration Days<span class="red">*</span></label>
+                <div >
+                    <p style="margin-top: 10px;">Start date</p>
+                    <input style="margin-top: 5px; box-shadow: 0 3px rgb(94, 94, 94);" type="date" id="start-date">
+                    <p style="margin-top: 10px;">Expiry date</p>
+                    <input style="margin-top: 5px;  box-shadow: 0 3px rgb(94, 94, 94);" type="date" id="end-date">
+                </div>
+            </div>
+            <div class="form-group" style="display: flex; justify-content:space-around; gap:20px">
+                <label style="width: 30%;" for="total-days">Total Days :</label>
+                <input type="text" id="total-days" placeholder="Days" readonly>
+            </div>
+            <div class="form-term">
+                <input type="checkbox" id="terms">
+                <label for="terms">I agree to the <a href="#" style="text-decoration: none; color:#0D99FF">Terms & Conditions</a></label>
+            </div>
+            <div class="form-actions">
+                <button class="submit" type="sumbit">Post a Project</button>
+                <button class="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>

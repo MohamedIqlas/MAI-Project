@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project List</title>
+    <style>
+        
+        .content {
+            padding: 2rem;
+        }
+
+        .content .search-sort {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .content input[type="text"] {
+            width: 70%;
+            padding: 0.7rem;
+            font-size: 1rem;
+        }
+
+        .content select {
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #ddd;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card .details {
+            padding: 1rem;
+        }
+
+        .project-card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .project-card .buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .project-card button {
+            flex: 1;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .project-card .view-btn {
+            background: #0056b3;
+            color: white;
+        }
+
+        .project-card .proposal-btn {
+            background: #f0ad4e;
+            color: white;
+        }
+
+        .project-card .internship-btn {
+            background: #5cb85c;
+            color: white;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .pagination button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+        }
+
+        .pagination button.active {
+            background: #0056b3;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .content .search-sort {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .content input[type="text"] {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="top-head">
+            <div class="logo">
+                <h1>MAI</h1>
+                <p>We Build Homes</p>
+            </div>
+            <div class="project-buttons">
+                <a href="/pages/post-project.html">Post a Project</a>
+                <button><i class="fa-solid fa-cart-shopping"></i> &nbsp; Login</button>
+                <button>Sign Up</button>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="cname">WWW.MYPROJECT.AI</div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <nav class="navbar-menu">
+                <ul style="list-style: none;">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="#">How it Works</a></li>
+                    <li><a href="/pages/project.html">Project</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">DIY Worktops</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero-section">
+        <div class="main-banner-project">
+            <div class="hero-text1">
+                <p>Post your projects with specifications and details explaining the depth of the project, materials needed, time limit to be taken, and budget</p>
+            </div>
+        </section>
+    </main>
+    <div class="content">
+        <h3>Project List</h3>
+        <div class="search-sort">
+            <input type="text" id="searchInput" placeholder="Search">
+            <select id="sortSelect">
+                <option value="">Sort by</option>
+                <option value="price">Price</option>
+                <option value="date">Date</option>
+            </select>
+        </div>
+        
+        <div id="projectList">
+            <div class="listed-project">
+                <p class="intern">Interns : 0</p>
+                <div class="p-img">
+                    <img src="/assets/images/Rectangle 3741.png" alt="">
+                </div>
+                <div class="p-desc">
+                    <div class="p-name">
+                        <div class="p-name-detail">
+                            <h3>Kitechen Worktop</h3>
+                            <button>kitchen</button>
+                            <button>splashback</button>
+                        </div>
+                        <div class="p-posted">Posted 07/08/24</div>
+                    </div>
+                    <div class="p-detail">
+                        <div class="detail1">
+                            <ul style="list-style-type: none;">
+                                <li>Project ID : MAIID123</li>
+                                <li>Bristol - England</li>
+                                <li>Duration : completed</li>
+                            </ul>
+                        </div>
+                        <div class="detail2">
+                            <ul style="list-style: none;">
+                                <li>Price - Fixed</li>
+                                <li>Expiry Date - Marble</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-status">
+                        <h4>Project Status : Active</h4>
+                        <h4>Last Update: 2024-08-12</h4>
+                        <h4>Proposal : 23</h4>
+                    </div>
+                    <div class="pr-desc">
+                        <h3>Description</h3>
+                        <p>Durable, heat-resistant, and available in various colors and patterns. Engineered stone, highly durable, non-porous, and low maintenance. The visible.....</p>
+                    </div>
+                    <div class="desc-button">
+                        <button>View</button>
+                        <button>Send a Proposal</button>
+                        <button>Apply Internship</button>
+                    </div>
+                </div>
+            </div>
+            <div class="listed-project">
+                <p class="intern">Interns : 0</p>
+                <div class="p-img">
+                    <img src="/assets/images/Rectangle 3741.png" alt="">
+                </div>
+                <div class="p-desc">
+                    <div class="p-name">
+                        <div class="p-name-detail">
+                            <h3>Kitechen Worktop</h3>
+                            <button>kitchen</button>
+                            <button>splashback</button>
+                        </div>
+                        <div class="p-posted">Posted 07/08/24</div>
+                    </div>
+                    <div class="p-detail">
+                        <div class="detail1">
+                            <ul style="list-style-type: none;">
+                                <li>Project ID : MAIID123</li>
+                                <li>Bristol - England</li>
+                                <li>Duration : completed</li>
+                            </ul>
+                        </div>
+                        <div class="detail2">
+                            <ul style="list-style: none;">
+                                <li>Price - Fixed</li>
+                                <li>Expiry Date - Marble</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-status">
+                        <h4>Project Status : Active</h4>
+                        <h4>Last Update: 2024-08-12</h4>
+                        <h4>Proposal : 23</h4>
+                    </div>
+                    <div class="pr-desc">
+                        <h3>Description</h3>
+                        <p>Durable, heat-resistant, and available in various colors and patterns. Engineered stone, highly durable, non-porous, and low maintenance. The visible.....</p>
+                    </div>
+                    <div class="desc-button">
+                        <button>View</button>
+                        <button>Send a Proposal</button>
+                        <button>Apply Internship</button>
+                    </div>
+                </div>
+            </div>
+            <div class="listed-project">
+                <p class="intern">Interns : 0</p>
+                <div class="p-img">
+                    <img src="/assets/images/Rectangle 3741.png" alt="">
+                </div>
+                <div class="p-desc">
+                    <div class="p-name">
+                        <div class="p-name-detail">
+                            <h3>Kitechen Worktop</h3>
+                            <button>kitchen</button>
+                            <button>splashback</button>
+                        </div>
+                        <div class="p-posted">Posted 07/08/24</div>
+                    </div>
+                    <div class="p-detail">
+                        <div class="detail1">
+                            <ul style="list-style-type: none;">
+                                <li>Project ID : MAIID123</li>
+                                <li>Bristol - England</li>
+                                <li>Duration : completed</li>
+                            </ul>
+                        </div>
+                        <div class="detail2">
+                            <ul style="list-style: none;">
+                                <li>Price - Fixed</li>
+                                <li>Expiry Date - Marble</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-status">
+                        <h4>Project Status : Active</h4>
+                        <h4>Last Update: 2024-08-12</h4>
+                        <h4>Proposal : 23</h4>
+                    </div>
+                    <div class="pr-desc">
+                        <h3>Description</h3>
+                        <p>Durable, heat-resistant, and available in various colors and patterns. Engineered stone, highly durable, non-porous, and low maintenance. The visible.....</p>
+                    </div>
+                    <div class="desc-button">
+                        <button>View</button>
+                        <button>Send a Proposal</button>
+                        <button>Apply Internship</button>
+                    </div>
+                </div>
+            </div>
+            <div class="listed-project">
+                <p class="intern">Interns : 0</p>
+                <div class="p-img">
+                    <img src="/assets/images/Rectangle 3741.png" alt="">
+                </div>
+                <div class="p-desc">
+                    <div class="p-name">
+                        <div class="p-name-detail">
+                            <h3>Kitechen Worktop</h3>
+                            <button>kitchen</button>
+                            <button>splashback</button>
+                        </div>
+                        <div class="p-posted">Posted 07/08/24</div>
+                    </div>
+                    <div class="p-detail">
+                        <div class="detail1">
+                            <ul style="list-style-type: none;">
+                                <li>Project ID : MAIID123</li>
+                                <li>Bristol - England</li>
+                                <li>Duration : completed</li>
+                            </ul>
+                        </div>
+                        <div class="detail2">
+                            <ul style="list-style: none;">
+                                <li>Price - Fixed</li>
+                                <li>Expiry Date - Marble</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-status">
+                        <h4>Project Status : Active</h4>
+                        <h4>Last Update: 2024-08-12</h4>
+                        <h4>Proposal : 23</h4>
+                    </div>
+                    <div class="pr-desc">
+                        <h3>Description</h3>
+                        <p>Durable, heat-resistant, and available in various colors and patterns. Engineered stone, highly durable, non-porous, and low maintenance. The visible.....</p>
+                    </div>
+                    <div class="desc-button">
+                        <button>View</button>
+                        <button>Send a Proposal</button>
+                        <button>Apply Internship</button>
+                    </div>
+                </div>
+            </div>
+            <div class="listed-project">
+                <p class="intern">Interns : 0</p>
+                <div class="p-img">
+                    <img src="/assets/images/Rectangle 3741.png" alt="">
+                </div>
+                <div class="p-desc">
+                    <div class="p-name">
+                        <div class="p-name-detail">
+                            <h3>Kitechen Worktop</h3>
+                            <button>kitchen</button>
+                            <button>splashback</button>
+                        </div>
+                        <div class="p-posted">Posted 07/08/24</div>
+                    </div>
+                    <div class="p-detail">
+                        <div class="detail1">
+                            <ul style="list-style-type: none;">
+                                <li>Project ID : MAIID123</li>
+                                <li>Bristol - England</li>
+                                <li>Duration : completed</li>
+                            </ul>
+                        </div>
+                        <div class="detail2">
+                            <ul style="list-style: none;">
+                                <li>Price - Fixed</li>
+                                <li>Expiry Date - Marble</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-status">
+                        <h4>Project Status : Active</h4>
+                        <h4>Last Update: 2024-08-12</h4>
+                        <h4>Proposal : 23</h4>
+                    </div>
+                    <div class="pr-desc">
+                        <h3>Description</h3>
+                        <p>Durable, heat-resistant, and available in various colors and patterns. Engineered stone, highly durable, non-porous, and low maintenance. The visible.....</p>
+                    </div>
+                    <div class="desc-button">
+                        <button>View</button>
+                        <button>Send a Proposal</button>
+                        <button>Apply Internship</button>
+                    </div>
+                </div>
+            </div>
+            <div class="listed-project">
+                <p class="intern">Interns : 0</p>
+                <div class="p-img">
+                    <img src="/assets/images/Rectangle 3741.png" alt="">
+                </div>
+                <div class="p-desc">
+                    <div class="p-name">
+                        <div class="p-name-detail">
+                            <h3>Kitechen Worktop</h3>
+                            <button>kitchen</button>
+                            <button>splashback</button>
+                        </div>
+                        <div class="p-posted">Posted 07/08/24</div>
+                    </div>
+                    <div class="p-detail">
+                        <div class="detail1">
+                            <ul style="list-style-type: none;">
+                                <li>Project ID : MAIID123</li>
+                                <li>Bristol - England</li>
+                                <li>Duration : completed</li>
+                            </ul>
+                        </div>
+                        <div class="detail2">
+                            <ul style="list-style: none;">
+                                <li>Price - Fixed</li>
+                                <li>Expiry Date - Marble</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-status">
+                        <h4>Project Status : Active</h4>
+                        <h4>Last Update: 2024-08-12</h4>
+                        <h4>Proposal : 23</h4>
+                    </div>
+                    <div class="pr-desc">
+                        <h3>Description</h3>
+                        <p>Durable, heat-resistant, and available in various colors and patterns. Engineered stone, highly durable, non-porous, and low maintenance. The visible.....</p>
+                    </div>
+                    <div class="desc-button">
+                        <button>View</button>
+                        <button>Send a Proposal</button>
+                        <button>Apply Internship</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pagination" id="pagination">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <footer>
+            <div class="footer-section">
+                <ul>
+                    <li>Privacy policy</li>
+                    <li>Terms & conditions</li>
+                    <li>Contact us</li>
+                </ul>
+                <div class="copy-rights">
+                    <p>All copyrights Reserved @MAI</p>
+                </div>
+                <div class="social-media">
+                    <p>Social networks : &nbsp; <i class="fa-brands fa-facebook-f"></i> &nbsp; <i class="fa-brands fa-twitter"></i> &nbsp; <i class="fa-brands fa-google"></i> &nbsp; <i class="fa-brands fa-instagram"></i> &nbsp; <i class="fa-brands fa-linkedin-in"></i> &nbsp; <i class="fa-brands fa-whatsapp"></i></p>
+                </div>
+            </div>
+        </footer>
+        <script src="/script.js"></script>
+</body>
+</html>
